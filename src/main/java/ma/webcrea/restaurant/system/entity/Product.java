@@ -11,6 +11,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -40,7 +41,7 @@ public class Product {
     @ManyToMany
     @JoinTable(
             name = "order_products",
-            joinColumns = @JoinColumn(name = "produit_id"),
+            joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id")
     )
     private Set<Order> orders = new HashSet<>();

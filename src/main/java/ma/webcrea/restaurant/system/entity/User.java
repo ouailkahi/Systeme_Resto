@@ -10,6 +10,7 @@ import jakarta.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")
 public class User {
 
     @Id
@@ -18,6 +19,6 @@ public class User {
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_username")
+    @JoinColumn(name = "role_name")
     private Role role;
 }

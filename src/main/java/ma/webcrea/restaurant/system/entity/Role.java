@@ -12,10 +12,11 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "roles")
 public class Role {
 
     @Id
-    private String username;
+    private String name;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<User> users = new HashSet<>();
